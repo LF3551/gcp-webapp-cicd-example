@@ -13,11 +13,18 @@ steps:
     args: ['container', 'clusters', 'get-credentials', 'test-cluster', '--region', 'us-central1', '--project', '$PROJECT_ID']
 
   # Deploying the application in GKE
-  - name: 'gcr.io/cloud-builders/kubectl'
-    args: ['apply', '-f', 'app-deployment.yaml']
-    id: 'Deploy WebApp'
-
+  - name: 'google/cloud-sdk'
+    entrypoint: 'bash'
+    args:
+    - '-c'
+    - |
+      kubectl apply -f app-deployment.yaml
+    id: 'Deploy to GKE'
   # Deploying the service in GKE
-  - name: 'gcr.io/cloud-builders/kubectl'
-    args: ['apply', '-f', 'app-service.yaml']
-    id: 'Deploy WebApp Service'
+  - name: 'google/cloud-sdk'
+    entrypoint: 'bash'
+    args:
+    - '-c'
+    - |
+      kubectl apply -f app-service.yaml
+    id: 'Deploy App Service'
