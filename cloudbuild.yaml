@@ -1,10 +1,26 @@
 steps:
+  # Building a Docker image for the web UI application
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'gcr.io/$PROJECT_ID/webapp', '.']
-    dir: 'webapp'
+    args: ['build', '-t', 'gcr.io/$PROJECT_ID/webapp', './webapp']
+    id: 'Build WebApp Image'
 
+  # Pushing the image to Container Registry
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/$PROJECT_ID/webapp']
+    id: 'Push WebApp Image'
+
+  # Obtaining credentials for GKE
   - name: 'gcr.io/cloud-builders/gcloud'
-    args: ['run', 'deploy', 'webapp', '--image', 'gcr.io/$PROJECT_ID/webapp', '--platform', 'managed']
+    args: ['container', 'clusters', 'get-credentials', 'test-cluster', '--zone', 'us-central1', '--project', '$PROJECT_ID']
+    id: 'Get GKE Credentials'
 
-images:
-  - 'gcr.io/$PROJECT_ID/webapp'
+  # Deploying the application in GKE
+  - name: 'gcr.io/cloud-builders/kubectl'
+    args: ['apply', '-f', 'app-deployment.yaml']
+    id: 'Deploy WebApp'
+
+  # Deploying the service in GKE
+  - name: 'gcr.io/cloud-builders/kubectl'
+    args: ['apply', '-f', 'app-service.yaml']
+    id: 'Deploy WebApp Service'
+
