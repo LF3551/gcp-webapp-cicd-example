@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: webapp
-        image: gcr.io/$PROJECT_ID/webapp
+        image: us-central1-docker.pkg.dev/qwiklabs-gcp-03-82952c0cd3e9/test-repository/webapp
         ports:
         - containerPort: 8080
