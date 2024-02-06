@@ -13,7 +13,7 @@ steps:
     args:
       - 'build'
       - '-t'
-      - 'us-central1-docker.pkg.dev/qwiklabs-gcp-03-414a3d71a8f1/test-repository/webapp'
+      - 'us-central1-docker.pkg.dev/qwiklabs-gcp-03-82952c0cd3e9/test-repository/webapp'
       - '.'  # Измените на '.' чтобы указать текущую директорию в качестве контекста сборки
     dir: 'webapp'  # Укажите, что директория для сборки - 'webapp'
 
