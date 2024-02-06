@@ -11,8 +11,7 @@ steps:
   # Obtaining credentials for GKE
   - name: 'gcr.io/cloud-builders/gcloud'
     args: ['container', 'clusters', 'get-credentials', 'test-cluster', '--region', 'us-central1', '--project', '$PROJECT_ID']
-    id: 'Get GKE Credentials'
-
+    
   # Deploying the application in GKE
   - name: 'gcr.io/cloud-builders/kubectl'
     args: ['apply', '-f', 'app-deployment.yaml']
