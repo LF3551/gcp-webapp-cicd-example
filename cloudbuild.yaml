@@ -5,7 +5,7 @@ steps:
       - 'build'
       - '-t'
       - 'us-central1-docker.pkg.dev/qwiklabs-gcp-03-414a3d71a8f1/test-repository/webapp'
-      - './webapp'
+      - 'webapp'
     id: 'Build WebApp Image'
 
   # Pushing the Docker image to the Artifact Registry
