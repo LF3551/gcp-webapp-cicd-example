@@ -1,4 +1,13 @@
 steps:
+  - name: 'ubuntu'
+    entrypoint: '/bin/bash'
+    args:
+          - '-c'
+          - |
+            echo "Listing the workspace directory:"
+            ls -la
+            echo "Checking if 'webapp' directory exists:"
+            ls -la webapp/
   # Building a Docker image for the web UI application
   - name: 'gcr.io/cloud-builders/docker'
     args: ['build', '-t', 'us-central1-docker.pkg.dev/qwiklabs-gcp-03-414a3d71a8f1/test-repository/webapp', './webapp']
