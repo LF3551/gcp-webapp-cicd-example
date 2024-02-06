@@ -1,13 +1,19 @@
 steps:
   # Building a Docker image for the web UI application
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'gcr.io/$PROJECT_ID/webapp', './webapp']
+    args:
+      - 'build'
+      - '-t'
+      - 'us-central1-docker.pkg.dev/qwiklabs-gcp-03-414a3d71a8f1/test-repository/webapp'
+      - './webapp'
     id: 'Build WebApp Image'
 
-  # Pushing the image to Container Registry
+  # Pushing the Docker image to the Artifact Registry
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'gcr.io/$PROJECT_ID/webapp']
-    id: 'Push WebApp Image'
+    args:
+      - 'push'
+      - 'us-central1-docker.pkg.dev/qwiklabs-gcp-03-414a3d71a8f1/test-repository/webapp'
+    id: 'Push WebApp Image to Test Registry'
 
   # Obtaining credentials for GKE
   - name: 'gcr.io/cloud-builders/gcloud'
