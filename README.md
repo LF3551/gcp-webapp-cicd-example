@@ -1,4 +1,7 @@
 # GCP WebApp CI/CD Example
+![GCP](https://commons.wikimedia.org/wiki/File:Google_Cloud_logo.svg)
+![Kubernetes](https://commons.wikimedia.org/wiki/File:Kubernetes_logo.svg)
+![Flask](https://en.m.wikipedia.org/wiki/File:Flask_logo.svg)
 
 This repository demonstrates a simple CI/CD pipeline for a Web UI application deployed on Google Cloud Platform (GCP) using Cloud Build and Kubernetes.
 
