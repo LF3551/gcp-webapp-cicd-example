@@ -1,11 +1,11 @@
 steps:
   # Building a Docker image for the web UI application
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'us-central1-docker.pkg.dev/qwiklabs-gcp-03-26d67dcfac20/test-repository/webapp', './webapp']
+    args: ['build', '-t', 'us-central1-docker.pkg.dev/qwiklabs-gcp-00-2ad8e3085b3b/test-repository/webapp', './webapp']
     
   # Pushing the Docker image to the Artifact Registry
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'us-central1-docker.pkg.dev/qwiklabs-gcp-03-26d67dcfac20/test-repository/webapp']
+    args: ['push', 'us-central1-docker.pkg.dev/qwiklabs-gcp-00-2ad8e3085b3b/test-repository/webapp']
     id: 'Push WebApp Image to Test Registry'
 
   # Obtaining credentials for GKE
@@ -28,4 +28,3 @@ steps:
     - |
       kubectl apply -f app-service.yaml
     id: 'Deploy App Service'
-    

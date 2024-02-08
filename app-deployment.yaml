@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: webapp
-        image: us-central1-docker.pkg.dev/qwiklabs-gcp-03-26d67dcfac20/test-repository/webapp:latest
+        image: us-central1-docker.pkg.dev/qwiklabs-gcp-00-2ad8e3085b3b/test-repository/webapp:latest
         ports:
         - containerPort: 8080
         
