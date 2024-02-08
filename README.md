@@ -19,17 +19,17 @@ The Web UI application is a simple Python Flask app (you can substitute this wit
 ## Structure
 
 ```plaintext
-├── webapp # Directory of the web application
-│ ├── Dockerfile # Dockerfile for creating the application container
-│ ├── app.py # Source code of the application
-│ ├── requirements.txt # Python dependencies
-│ └── templates # Templates for web pages
-│ └── index.html # Main web page template
-├── cloudbuild.yaml # Cloud Build configuration for CI/CD
+├── webapp              # Directory of the web application
+│ ├── Dockerfile        # Dockerfile for creating the application container
+│ ├── app.py            # Source code of the application
+│ ├── requirements.txt  # Python dependencies
+│ └── templates         # Templates for web pages
+│ └── index.html        # Main web page template
+├── cloudbuild.yaml     # Cloud Build configuration for CI/CD
 ├── app-deployment.yaml # Configuration for deployment in Kubernetes
-├── app-service.yaml # Configuration for Kubernetes service
-├── README.md # This README file
-└── LICENSE # License agreement
+├── app-service.yaml    # Configuration for Kubernetes service
+├── README.md           # This README file
+└── LICENSE             # License agreement
 ```
 ## Setup and Deployment
 
