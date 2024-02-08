@@ -1,9 +1,6 @@
 # GCP WebApp CI/CD Example
-<p align="center">
-  <img src="/images/google_cloud.png" width="100" />
-  <img src="/images/kubernetes.png" width="100" />
-  <img src="/images/flask.png" width="100" />
-</p>
+[![Supported python versions](https://img.shields.io/badge/Python-3.11%20%7C%203.11-blue?style=flat-square&logo=python)](https://www.python.org/)
+
 
 This repository demonstrates a simple CI/CD pipeline for a Web UI application deployed on Google Cloud Platform (GCP) using Cloud Build and Kubernetes.
 
