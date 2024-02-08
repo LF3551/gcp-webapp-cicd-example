@@ -56,6 +56,8 @@ After deployment, find the external IP of your service and access the Web UI app
 
 Contributions are welcome! Please feel free to submit a pull request.
 
+If you found this project helpful, please consider giving it a ⭐️! Your support encourages further development and improvements. Thank you!
+
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
